@@ -47,7 +47,8 @@ public class App {
         if (totalItem >= 6){
             System.out.println("折扣前: " + totalPrice);
             System.out.println("已享用折扣:買滿6串免一串收費,減" + (minPrice));
-            System.out.println("折扣後" + (totalPrice - minPrice));
+            totalPrice = totalPrice - minPrice;
+            System.out.println("折扣後" + totalPrice);
             System.out.println("-------------------");
         }else if (totalItem <= 6){
             System.out.println("總銀碼:$: " + totalPrice);
@@ -56,19 +57,20 @@ public class App {
 
         System.out.print("請輸入食客給予的銀碼($): ");
         double customerMoney = s.nextInt();     //銀碼       
-        while (customerMoney <= totalPrice) {
-            System.out.println("尚欠 $" + (customerMoney - totalPrice));{
+        while (customerMoney < totalPrice) {
+            System.out.println("尚欠 $" + (customerMoney - totalPrice));
+            
                 System.out.print("請輸入食客給予的銀碼($): ");
                 double tryAgain = s.nextInt(); 
-                    if (tryAgain > totalPrice){
-                        System.out.println("收: $" + tryAgain + "找: $" + (tryAgain - (totalPrice - minPrice)));
+                    if (tryAgain >= totalPrice){
+                        System.out.println("收: $" + tryAgain + "找: $" + (tryAgain - totalPrice));
                         return;
                 }
-            }
+            
         }
 
-        if (customerMoney > totalPrice){
-            System.out.println("收: $" + customerMoney + "找: $" + (customerMoney - (totalPrice - minPrice)));
+        if (customerMoney >= totalPrice){
+            System.out.println("收: $" + customerMoney + "找: $" + (customerMoney - totalPrice));
         }
 
     }
