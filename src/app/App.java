@@ -7,9 +7,9 @@ package app;
 import java.util.Scanner;
 /**
  * 
- * @Data Oct/06
- * @author Lawrence
- *
+ * @author Cheng Man Hon Lawrence
+ * @Data 2021 Oct/06
+ * @Function: This program is allows customer to make transactions and using discount functions
  */
 public class App {
 
