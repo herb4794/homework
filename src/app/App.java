@@ -6,8 +6,10 @@
 package app;
 import java.util.Scanner;
 /**
- *
+ * 
+ * @Data Oct/06
  * @author Lawrence
+ *
  */
 public class App {
 
@@ -15,6 +17,7 @@ public class App {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         Scanner s = new Scanner(System.in);
         System.out.println("歡迎光臨開心四川麻辣燙");
         System.out.println("---------------------------");
@@ -25,7 +28,7 @@ public class App {
         System.out.print("請輸入紫色籤子的數目: ");
         int purpleItem = s.nextInt();   //紫色籤子
         System.out.println("-----已點選清單-----");
-
+        
         int greenItemCost = greenItem * 6;      //綠色籤子價錢
         int blueItemCost = blueItem * 8;        //藍色籤子價錢
         int purpleItemCost = purpleItem * 10;   //紫色籤子價錢
@@ -34,16 +37,16 @@ public class App {
         System.out.println("藍色籤 ($8) x " + blueItem + "技,共 $" + (blueItemCost));
         System.out.println("紫色籤 ($10) x " + purpleItem + "技,共 $" + (purpleItemCost));
         System.out.println("-------------------");
-
+        
         int totalItem = greenItem + blueItem + purpleItem ;     //輸入的籤子總數
         int totalPrice = greenItemCost + blueItemCost + purpleItemCost;     //輸入的籤子總價錢
         int minPrice = 6;       //  折扣變數
-        
+
         if ( (greenItem == 0) & (blueItem > 0) )
         minPrice = 8;
             else if ((blueItem == 0 ) & (purpleItem > 0))
             minPrice = 10;
-       
+
         if (totalItem >= 6){
             System.out.println("折扣前: " + totalPrice);
             System.out.println("已享用折扣:買滿6串免一串收費,減" + (minPrice));
@@ -65,10 +68,9 @@ public class App {
                     if (tryAgain >= totalPrice){
                         System.out.println("收: $" + tryAgain + "找: $" + (tryAgain - totalPrice));
                         return;
-                }
-            
+            }           
         }
-
+        
         if (customerMoney >= totalPrice){
             System.out.println("收: $" + customerMoney + "找: $" + (customerMoney - totalPrice));
         }
